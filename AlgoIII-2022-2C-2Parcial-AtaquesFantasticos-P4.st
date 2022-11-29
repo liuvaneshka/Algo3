@@ -154,31 +154,6 @@ TestCase subclass: #BonificadoresDeAtaquesTest
 	poolDictionaries: ''
 	category: 'AlgoIII-2022-2C-2Parcial-AtaquesFantasticos-P4'!
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 00:32:51'!
-ataqueDeFlanco
-
-	^ (BonificadorDeAtaqueDeFlanco new).! !
-
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 00:33:02'!
-ataquePorRetaguardia
-
-	^ (BonificadorDeAtaquePorRetaguardia new).! !
-
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 00:33:09'!
-estadoDeFuria
-
-	^ (BonificadorDeAtaquePorFuria new).! !
-
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 00:33:16'!
-inspirado
-
-	^ (BonificadorDeAtaqueInspirado new).! !
-
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 00:33:28'!
-terrenoElevado
-
-	^ (BonificadorDeAtaqueEnTerrenoElevado new).! !
-
 !BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:32:03'!
 test01NoSeUsanBonificadoresAtacaModoBasico
 	
@@ -267,6 +242,26 @@ test09AtaqueConCuatroBonificadoresDosSonDeTipoPosicion
 ! !
 
 
+!BonificadoresDeAtaquesTest methodsFor: 'setUp' stamp: 'lvg 11/29/2022 00:32:51'!
+ataqueDeFlanco
+
+	^ (BonificadorDeAtaqueDeFlanco new).! !
+
+!BonificadoresDeAtaquesTest methodsFor: 'setUp' stamp: 'lvg 11/29/2022 00:33:02'!
+ataquePorRetaguardia
+
+	^ (BonificadorDeAtaquePorRetaguardia new).! !
+
+!BonificadoresDeAtaquesTest methodsFor: 'setUp' stamp: 'lvg 11/29/2022 00:33:09'!
+estadoDeFuria
+
+	^ (BonificadorDeAtaquePorFuria new).! !
+
+!BonificadoresDeAtaquesTest methodsFor: 'setUp' stamp: 'lvg 11/29/2022 00:33:16'!
+inspirado
+
+	^ (BonificadorDeAtaqueInspirado new).! !
+
 !BonificadoresDeAtaquesTest methodsFor: 'setUp' stamp: 'lvg 11/29/2022 04:32:03'!
 setUp
 
@@ -276,6 +271,11 @@ setUp
 	ataquePunioBasico := 2*pv.
 	puntosDeVidaIniciales := 20*pv.
 	bonificadores := {}.! !
+
+!BonificadoresDeAtaquesTest methodsFor: 'setUp' stamp: 'lvg 11/29/2022 00:33:28'!
+terrenoElevado
+
+	^ (BonificadorDeAtaqueEnTerrenoElevado new).! !
 
 
 !BonificadoresDeAtaquesTest methodsFor: 'assersiones' stamp: 'lvg 11/29/2022 04:29:33'!
