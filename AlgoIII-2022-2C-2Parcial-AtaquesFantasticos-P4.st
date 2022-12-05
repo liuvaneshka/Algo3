@@ -154,91 +154,96 @@ TestCase subclass: #BonificadoresDeAtaquesTest
 	poolDictionaries: ''
 	category: 'AlgoIII-2022-2C-2Parcial-AtaquesFantasticos-P4'!
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:32:03'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
+puntosDeVidaRestadosAtaqueBasico
+
+	^ puntosDeVidaIniciales - ataquePunioBasico! !
+
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test01NoSeUsanBonificadoresAtacaModoBasico
 	
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (puntosDeVidaIniciales - ataquePunioBasico)
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (self puntosDeVidaRestadosAtaqueBasico)
 
 ! !
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:35:51'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test02BonificadorDeAtaqueTerrenoElevadoRestaUnPuntoDeVida
 		
 	bonificadores := {self terrenoElevado}.
 
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (puntosDeVidaIniciales - ataquePunioBasico - (1*pv))
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (self puntosDeVidaRestadosAtaqueBasico - (1*pv))
 
 	
 
 ! !
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:33:34'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test03BonificadorDeAtaqueEstadoDeFuriaRestaDosPuntosDeVida
 
 	bonificadores := {self estadoDeFuria}.
 
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (puntosDeVidaIniciales - ataquePunioBasico - (2*pv)) ! !
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (self puntosDeVidaRestadosAtaqueBasico - (2*pv)) ! !
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:33:45'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test04BonificadorDeAtaqueInspiradoRestaDosPuntosDeVida
 	
 	bonificadores := {self inspirado}.
 
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (puntosDeVidaIniciales - ataquePunioBasico - (2*pv))! !
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (self puntosDeVidaRestadosAtaqueBasico - (2*pv))! !
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:33:56'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test05BonificadorDeAtaqueDeFlancoRestaDosPuntosDeVida
 	
 	bonificadores := {self ataqueDeFlanco}.
 
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (puntosDeVidaIniciales - ataquePunioBasico - (2*pv)) ! !
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (self puntosDeVidaRestadosAtaqueBasico - (2*pv)) ! !
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:34:08'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test06BonificadorDeAtaquePorRetaguardiaRestaCuatroPuntosDeVida
 	
 	bonificadores := {self ataquePorRetaguardia}.
 
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (puntosDeVidaIniciales - ataquePunioBasico - (4*pv))! !
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (self puntosDeVidaRestadosAtaqueBasico - (4*pv))! !
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:34:18'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test07AtaqueConTresBonificadoresDosSonDeTipoMoral
 	
 	bonificadores := {self terrenoElevado. self estadoDeFuria. self inspirado}.
 
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados:(puntosDeVidaIniciales - ataquePunioBasico - (3*pv)) ! !
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados:(self puntosDeVidaRestadosAtaqueBasico - (3*pv)) ! !
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:34:31'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test08AtaqueConCuatroBonificadoresDosSonDeTipoPosicion
 
 	bonificadores := {self terrenoElevado. self inspirado. self ataqueDeFlanco. self ataquePorRetaguardia}.
 
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (puntosDeVidaIniciales - ataquePunioBasico - (7*pv))
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (self puntosDeVidaRestadosAtaqueBasico - (7*pv))
 ! !
 
-!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 11/29/2022 04:34:46'!
+!BonificadoresDeAtaquesTest methodsFor: 'tests' stamp: 'lvg 12/5/2022 14:04:46'!
 test09AtaqueConCuatroBonificadoresDosSonDeTipoPosicion
 	
 	bonificadores := {self terrenoElevado. self inspirado. self ataqueDeFlanco. self ataquePorRetaguardia}.
 
 	atacante atacarConBonificadores: bonificadores.
 	
-	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (puntosDeVidaIniciales - ataquePunioBasico - (7*pv)).
+	self assertPuntosDeVidaRestantesDeLaVictimaEsperados: (self puntosDeVidaRestadosAtaqueBasico - (7*pv)).
 ! !
 
 
